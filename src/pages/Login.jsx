@@ -1,10 +1,32 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const isLoginFormValid = email.trim() !== '' && password.trim() !== '';
+
+    const handleLogin = () => {
+        // Se o login for bem-sucedido, redirecione para /inicio
+        if (isLoginFormValid) {
+            navigate('/inicio');
+        }
+    };
+
     return (
         <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
             <div className="flex items-center justify-center py-12 bg-green-300">
@@ -20,35 +42,45 @@ function Login() {
                                     id="email"
                                     type="email"
                                     placeholder="m@example.com"
+                                    value={email}
+                                    onChange={handleEmailChange}
                                     required
                                 />
                             </div>
                             <div className="grid gap-2">
                                 <div className="flex items-center">
                                     <Label htmlFor="password">Senha</Label>
-                                    <Link
+                                    <a
                                         href="/forgot-password"
                                         className="ml-auto inline-block text-sm underline"
                                     >
                                         Esqueceu sua senha?
-                                    </Link>
+                                    </a>
                                 </div>
-                                <Input id="password" type="password" required />
+                                <Input
+                                    id="password"
+                                    type="password"
+                                    value={password}
+                                    onChange={handlePasswordChange}
+                                    required
+                                />
                             </div>
-                            <Link to="/inicio">
-                                <Button type="submit" className="w-full">
-                                    Login
-                                </Button>
-                            </Link>
+                            <Button
+                                type="button"
+                                className={`w-full ${isLoginFormValid ? '' : 'opacity-50 pointer-events-none'}`}
+                                onClick={handleLogin}
+                            >
+                                Login
+                            </Button>
                             <Button variant="outline" className="w-full">
                                 Login com o Google
                             </Button>
                         </div>
                         <div className="mt-4 text-center text-sm">
-                            Não possui conta?{" "}
-                            <Link to="/cadastro" className="underline">
+                            Não possui conta?{' '}
+                            <a href="/cadastro" className="underline">
                                 Registrar-se
-                            </Link>
+                            </a>
                         </div>
                     </Card>
                 </div>

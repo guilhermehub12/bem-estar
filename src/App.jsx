@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Header from './pages/Header.jsx'
-import Footer from './pages/Footer.jsx'
+import { Footer } from './pages/Footer.jsx'
 import { Home } from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
+import { About } from "./pages/About.jsx";
 import { Patient } from "./pages/Patient.jsx";
-import Login from "./pages/Login.jsx";
+import { Login } from "./pages/Login.jsx";
 import { Register } from "./pages/Register.jsx";
 import { RegisterPatient } from "./pages/RegisterPatient.jsx";
 

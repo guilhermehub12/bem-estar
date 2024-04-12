@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaUser, FaCalendarAlt } from 'react-icons/fa';
-import Header from "@/pages/Header"
+import { Header } from "@/pages/Header"
 
 export function Home() {
 

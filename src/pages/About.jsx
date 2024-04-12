@@ -1,9 +1,9 @@
-import Header from "./Header";
+import { Header } from "./Header";
 
-function About() {
+export function About() {
     return (
         <>
-            <Header />
+            <Header></Header>
 
             <main className="container mx-auto px-4 py-8">
                 <section className="text-center mb-8">
@@ -34,5 +34,3 @@ function About() {
         </>
     );
 }
-
-export default About;

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Table, TableHeader, TableBody, TableCell, TableHead, TableRow } from "@/components/ui/table";
 import { CgProfile, CgMoreVerticalAlt } from "react-icons/cg";
-import Header from "@/pages/Header";
+import { Header } from "@/pages/Header";
 import faker from 'faker';
 
 // Função para gerar pacientes fakes a partir da lib Faker

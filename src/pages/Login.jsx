@@ -5,11 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
-function Login() {
+export function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    
+
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
@@ -18,10 +18,14 @@ function Login() {
         setPassword(e.target.value);
     };
 
-    const isLoginFormValid = email.trim() !== '' && password.trim() !== '';
+    const isEmailValid = (email) => {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    };
+
+    const isLoginFormValid = email.trim() !== '' && password.trim() !== '' && isEmailValid(email);
 
     const handleLogin = () => {
-        // Se o login for bem-sucedido, redirecione para /inicio
         if (isLoginFormValid) {
             navigate('/inicio');
         }
@@ -46,6 +50,9 @@ function Login() {
                                     onChange={handleEmailChange}
                                     required
                                 />
+                                {!isEmailValid(email) && (
+                                    <span className="text-red-500 text-xs">Por favor, insira um email válido.</span>
+                                )}
                             </div>
                             <div className="grid gap-2">
                                 <div className="flex items-center">
@@ -95,5 +102,3 @@ function Login() {
         </div>
     );
 }
-
-export default Login;

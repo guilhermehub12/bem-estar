@@ -1,48 +1,67 @@
-import { Link } from 'react-router-dom'
-import React from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {Card, CardContent, CardDescription, CardFooter, CardHeader,CardTitle,} from "@/components/ui/card"
+import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
-
-export function Login (){
+function Login() {
     return (
-    <main className="h-screen flex w-full">
-        <div className ="bg-background w-full max-w3xl h-full flex">
-            <div className=" bg-green-300 flex bg-background h-full max-w4xl p-52">
-                <Card className="relative h-96 w-80 top-12 left-96">
-                    <CardHeader>
-                        <CardTitle className="text-2xl text-center">Faça Login</CardTitle>
-                    </CardHeader>
-                    <CardContent>
+        <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
+            <div className="flex items-center justify-center py-12 bg-green-300">
+                <div className="mx-auto grid w-[350px] gap-6">
+                    <Card className="p-8">
+                        <CardHeader>
+                            <CardTitle className="text-3xl font-bold text-center">Faça Login</CardTitle>
+                        </CardHeader>
                         <div className="grid gap-4">
-                            <div className="grid gap-4">
-                                <div className="grid gap-2">
-                                    <Label htmlFor="email">Email</Label>
-                                    <Input
+                            <div className="grid gap-2">
+                                <Label htmlFor="email">Email</Label>
+                                <Input
                                     id="email"
                                     type="email"
-                                    placeholder="email@example.com"
-                                    required></Input>
-                                </div>
-                                <div className="grid gap-2">
-                                    <Label htmlFor="password">Senha</Label>
-                                    <Input 
-                                    id="password" 
-                                    type="password"
-                                    placeholder="Insira sua senha"
-                                    required></Input>
-                                </div>
-                                    <Button type="submit">Entrar</Button>
-                                    <Button variant="outline" className="w-full"><Link to='/cadastro' >Fazer Cadastro</Link></Button>
+                                    placeholder="m@example.com"
+                                    required
+                                />
                             </div>
-                            <div className="text-center"><Link to='/sobre'>Sobre</Link></div>
+                            <div className="grid gap-2">
+                                <div className="flex items-center">
+                                    <Label htmlFor="password">Senha</Label>
+                                    <Link
+                                        href="/forgot-password"
+                                        className="ml-auto inline-block text-sm underline"
+                                    >
+                                        Esqueceu sua senha?
+                                    </Link>
+                                </div>
+                                <Input id="password" type="password" required />
+                            </div>
+                            <Link to="/inicio">
+                                <Button type="submit" className="w-full">
+                                    Login
+                                </Button>
+                            </Link>
+                            <Button variant="outline" className="w-full">
+                                Login com o Google
+                            </Button>
                         </div>
-                    </CardContent>
-                </Card>
+                        <div className="mt-4 text-center text-sm">
+                            Não possui conta?{" "}
+                            <Link to="/cadastro" className="underline">
+                                Registrar-se
+                            </Link>
+                        </div>
+                    </Card>
                 </div>
-                </div>
-                </main>
-    )
+            </div>
+            <div className="sm:hidden bg-muted lg:block bg-red w-full">
+                <img
+                    src="Logo.svg"
+                    alt="img"
+                    className="h-60 w-60 object-cover dark:brightness-[0.2] dark:grayscale mx-auto my-40"
+                />
+            </div>
+        </div>
+    );
 }
+
+export default Login;

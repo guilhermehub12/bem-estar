@@ -49,7 +49,7 @@ export function Home() {
                     <div className="bg-white rounded-lg shadow-lg">
                         <Card>
                             <CardHeader className="pb-2">
-                                <CardTitle className="text-center text-lg font-semibold">Novos Pacientes</CardTitle>
+                                <CardTitle className="text-center text-lg font-semibold">Novas Consultas</CardTitle>
                             </CardHeader>
                             <CardContent className="flex items-center justify-center py-6">
                                 <FaUser className="text-5xl text-blue-500 mr-4" />
@@ -63,7 +63,7 @@ export function Home() {
                     <div className="bg-white rounded-lg shadow-lg">
                         <Card>
                             <CardHeader className="pb-2">
-                                <CardTitle className="text-center text-lg font-semibold">Novos Pacientes</CardTitle>
+                                <CardTitle className="text-center text-lg font-semibold">Consultas Canceladas</CardTitle>
                             </CardHeader>
                             <CardContent className="flex items-center justify-center py-6">
                                 <FaUser className="text-5xl text-blue-500 mr-4" />

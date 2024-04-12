@@ -19,26 +19,26 @@ function Header() {
         <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
             <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
                 <Link
-                    href="#"
+                    to="#"
                     className="flex items-center gap-2 text-lg font-semibold md:text-base"
                 >
                     <Package2 className="h-6 w-6" />
                     <span className="sr-only">Bem Estar Inc</span>
                 </Link>
                 <Link
-                    href="#"
+                    to="/inicio"
                     className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                     Início
                 </Link>
                 <Link
-                    href="#"
+                    to="/pacientes"
                     className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                     Pacientes
                 </Link>
                 <Link
-                    href="#"
+                    to="/sobre"
                     className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                     Sobre
@@ -58,31 +58,31 @@ function Header() {
                 <SheetContent side="left">
                     <nav className="grid gap-6 text-lg font-medium">
                         <Link
-                            href="#"
+                            to="#"
                             className="flex items-center gap-2 text-lg font-semibold"
                         >
                             <Package2 className="h-6 w-6" />
                             <span className="sr-only">Bem Estar Inc</span>
                         </Link>
                         <Link
-                            href="#"
+                            to="/inicio"
                             className="text-muted-foreground hover:text-foreground"
                         >
                             Início
                         </Link>
                         <Link
-                            href="#"
+                            to="/pacientes"
                             className="text-muted-foreground hover:text-foreground"
                         >
                             Pacientes
                         </Link>
                         <Link
-                            href="#"
+                            to="/sobre"
                             className="text-muted-foreground hover:text-foreground"
                         >
                             Sobre
                         </Link>
-                        <Link href="#" className="hover:text-foreground">
+                        <Link to="#" className="hover:text-foreground">
                             Configurações
                         </Link>
                     </nav>

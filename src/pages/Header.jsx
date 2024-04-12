@@ -1,20 +1,26 @@
 import { Link } from 'react-router-dom'
 import '@/assets/css/header.css'
+import {Card, CardContent, CardDescription, CardFooter, CardHeader,CardTitle,} from "@/components/ui/card"
+import { Button } from '../components/ui/button'
 
 function Header() {
     return (
         <>
             <header>
                 <div className="header-content">
-                    <h1>Agendamento de Consultas</h1>
-                    <p>Marque sua consulta facilmente online!</p>
+                    <h4>Início</h4>
+                </div>
+                <CardContent></CardContent>
+                <div>
+
+                    <CardTitle>
+                    <p>Consultório Dra Carolina</p>
+                    </CardTitle>
                 </div>
             </header>
-
             <div className="navbar">
-                <Link to='/' >Início</Link>
-                <Link to='/pacientes'>Pacientes</Link>
-                <Link to='/sobre' >Sobre</Link>
+                <Link to='/inicio' >Início</Link>
+                <Link to='pacientes/cadastro'>Novo Paciente</Link>
             </div>
 
         </>

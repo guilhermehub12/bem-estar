@@ -6,12 +6,12 @@ import { Label } from "@/components/ui/label"
 import {Card, CardContent, CardDescription, CardFooter, CardHeader,CardTitle,} from "@/components/ui/card"
 
 
-export function Patient (){
+export function Login (){
     return (
-    <main className="container mx-auto">
-        <div className ="grid grid-cols-2 grid-flow-col">
-            <div className="bg-green-400 row-start-1 row-end-4">
-                <Card className="relative h-50 w-80 top-64 left-52">
+    <main className="h-screen flex w-full">
+        <div className ="bg-background w-full max-w3xl h-full flex">
+            <div className=" bg-green-300 flex bg-background h-full max-w4xl p-52">
+                <Card className="relative h-96 w-80 top-12 left-96">
                     <CardHeader>
                         <CardTitle className="text-2xl text-center">Faça Login</CardTitle>
                     </CardHeader>
@@ -42,7 +42,6 @@ export function Patient (){
                     </CardContent>
                 </Card>
                 </div>
-                <div className = "bg-slate-600 row-start-1 row-end-4"></div>
                 </div>
                 </main>
     )
